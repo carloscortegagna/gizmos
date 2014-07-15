@@ -8,10 +8,10 @@ Rails Engine for inline editing with RailsAdmin
 `Gemfile.rb`:
 
 ```ruby
-gem 'seorel'
+gem 'gizmos'
 
 # the edge version can be had using:
-# gem 'seorel', github: 'carloscortegagna/gizmos'
+# gem 'gizmos', github: 'carloscortegagna/gizmos'
 ```
 
 `Console`:
