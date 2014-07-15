@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: 1
+  background_color: MyString
+  contentable_id: 
+  contentable_type: Contentable
+  content_id: 
+  content_type: Content
+  position: 1
+  is_yeld: false
+
+two:
+  status: 1
+  background_color: MyString
+  contentable_id: 
+  contentable_type: Contentable
+  content_id: 
+  content_type: Content
+  position: 1
+  is_yeld: false
