@@ -21,10 +21,7 @@ class Gizmo < ActiveRecord::Base
   end
 
   def self.color_palette
-    [ ['Light Grey', 'f1f1f1'],
-      ['Grey', '444444'],
-      ['Dark Grey', '2f2f2f'],
-      ['Red', 'e00022'] ]
+    Gizmos.config.color_palette
   end
 
   def apply_color_palette

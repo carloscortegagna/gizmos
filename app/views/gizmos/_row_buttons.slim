@@ -1,0 +1,9 @@
+.admin-buttons
+  - unless position.include? 'first'
+    = link_to '', move_up_gizmo_path(gizmo), class: 'fa fa-arrow-up admin-tooltip', title: t('admin.move_up_tooltip'), :'data-no-turbolink' => true
+  - unless position.include? 'last'
+    = link_to '', move_down_gizmo_path(gizmo), class: 'fa fa-arrow-down admin-tooltip', title: t('admin.move_down_tooltip'), :'data-no-turbolink' => true
+  - unless gizmo.is_yield
+    = link_to '', edit_content_gizmo_path(gizmo), class: 'fa fa-edit admin-tooltip', remote: true, title: t('admin.edit_tooltip'), :'data-no-turbolink' => true
+    = link_to '', gizmo_path(gizmo), class: 'fa fa-times admin-tooltip', method: :delete, remote: true, title: t('admin.delete_tooltip'), :'data-no-turbolink' => true
+    = link_to '', edit_content_gizmo_path(gizmo), class: "gizmo-status admin-tooltip status-#{gizmo.status}", :remote => true, title: gizmo.status.capitalize, :'data-no-turbolink' => true

@@ -1,0 +1,4 @@
+.add-gizmo
+  = fa_icon :plus
+  - contentable.class.appendable_wrappers.each do |type|
+    = link_to t("admin.appendable_types.#{type}"), new_gizmo_path(format: :js, contentable_id: contentable.id, contentable_type: contentable.class, content_type: type), remote: true, :'data-no-turbolink' => true

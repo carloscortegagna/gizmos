@@ -1,0 +1,14 @@
+$.fancybox.open(
+  { href: '<%= @url %>' },
+  {
+    padding: 0,
+    scrolling: 'auto',
+    preload: true,
+    width: '80%',
+    type: 'iframe',
+    wrapCSS: 'modal-admin',
+    beforeShow: function() {
+      Gizmo.clearAdminModal();
+    }
+  }
+);

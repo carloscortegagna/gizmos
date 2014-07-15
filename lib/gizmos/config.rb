@@ -14,6 +14,8 @@ module Gizmos
   class Configuration
     include ActiveSupport::Configurable
     config_accessor :admin_scope
+    config_accessor :color_palette
+    config_accessor :appendable_types
 
     def param_name
       config.param_name.respond_to?(:call) ? config.param_name.call : config.param_name
@@ -26,7 +28,9 @@ module Gizmos
   end
 
   configure do |config|
-    config.admin_scope = current_user
+    config.admin_scope = :current_user
+    config.color_palette = []
+    config.appendable_types = []
   end
 
 end

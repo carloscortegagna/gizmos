@@ -1,0 +1,17 @@
+$.fancybox.open(
+  { href: '<%= @url %>&return_to=<%= success_gizmos_url %>' },
+  {
+    padding: 0,
+    scrolling: 'auto',
+    preload: true,
+    minWidth: '85%',
+    maxWidth: '1200px',
+    minHeight: '83%',
+    maxHeight: '85%',
+    type: 'iframe',
+    wrapCSS: 'modal-admin',
+    beforeShow: function() {
+      Gizmo.clearAdminModal();
+    }
+  }
+);
