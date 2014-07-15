@@ -21,10 +21,10 @@ gem 'gizmos'
 ```
 
 
-## Default configuration options
+## Default configuration options & routes
 
 ```bash
-% rails generate gizmos:config
+% rails generate gizmos:install
 ```
 
 Will generate the `gizmos_config.rb` initializer to customize the default values:

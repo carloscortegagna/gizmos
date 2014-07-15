@@ -5,12 +5,18 @@ module Gizmos
 
     source_root File.expand_path('../templates', __FILE__)
 
-    def copy_config_file
-      template 'gizmos_config.rb', 'config/initializers/gizmos_config.rb'
-    end
+    def install
+      routes = File.open(Rails.root.join("config/routes.rb")).try :read
+      rails_admin_initializer = (File.open(Rails.root.join("config/initializers/rails_admin.rb")) rescue nil).try :read
 
-    def add_routes
-      route "mount Gizmos::Engine => ''"
+      if !defined?(Devise) || !routes.index("devise_for")
+        say 'Devise not installed. Please install it first...'
+      elsif rails_admin_initializer.blank?
+        say 'RailsAdmin not installed. Please install it first...'
+      else
+        template 'gizmos_config.rb', 'config/initializers/gizmos_config.rb'
+        route "mount Gizmos::Engine => 'gizmos'"
+      end
     end
 
   end
